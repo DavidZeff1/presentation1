@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/מצגת-רווחה-גוש-עציון.html" }
+  ]
+}
