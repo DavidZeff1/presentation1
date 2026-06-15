@@ -472,6 +472,168 @@
         min-width: 46px;
         text-align: left;
       }
+      .bar-val .pct {
+        display: block;
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 11px;
+        color: var(--clay);
+        margin-top: 1px;
+        letter-spacing: 0.01em;
+      }
+      /* budget bar: track = annual budget, fill = spent so far */
+      .bar-track.budgettrack {
+        background: transparent;
+        border: none;
+        overflow: visible;
+      }
+      .bar-budget {
+        height: 100%;
+        width: var(--b);
+        min-width: 3px;
+        background: var(--paper-2);
+        border: 1px solid var(--line-strong);
+        border-radius: 7px;
+        overflow: hidden;
+      }
+      .bar-spent {
+        display: block;
+        height: 100%;
+        width: var(--s);
+        background: linear-gradient(90deg, var(--pine-2), var(--pine));
+        transition: width 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s;
+      }
+      .bar-spent.c-gold {
+        background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+      }
+      .bar-spent.c-sage {
+        background: linear-gradient(90deg, #94a487, var(--sage));
+      }
+      .js .bar-spent {
+        width: 0;
+      }
+      .js .slide.is-active .bar-spent {
+        width: var(--s);
+      }
+      .bar-val .ann {
+        display: block;
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-top: 1px;
+      }
+      /* ===== DATA TABLE ===== */
+      .dtable {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: clamp(11px, 1.15vw, 13.5px);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .dtable thead th {
+        font-family: var(--sans);
+        font-weight: 700;
+        color: var(--pine);
+        text-align: right;
+        padding: 9px 12px;
+        border-bottom: 2px solid var(--line-strong);
+        background: var(--paper-2);
+        white-space: nowrap;
+      }
+      .dtable thead th.c {
+        text-align: center;
+      }
+      .dtable tbody td {
+        padding: 7px 12px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+      }
+      .dtable tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .dtable tbody tr:nth-child(even) {
+        background: rgba(216, 204, 180, 0.16);
+      }
+      .dtable td.nm {
+        font-weight: 700;
+        color: var(--pine);
+      }
+      .dtable td.c {
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+      .dtable td.tot {
+        font-family: var(--serif);
+        font-weight: 900;
+        color: var(--pine);
+      }
+      .dtable td.out {
+        color: var(--clay);
+        font-weight: 700;
+      }
+      .dtable tr.total td {
+        font-weight: 800;
+        color: var(--pine);
+        border-top: 2px solid var(--line-strong);
+        background: var(--paper-2);
+      }
+      /* ===== BENCHMARK CALLOUT ===== */
+      .bench {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 2.4vw, 38px);
+        flex-wrap: wrap;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-right: 6px solid var(--clay);
+        border-radius: 14px;
+        padding: clamp(12px, 1.6vw, 20px) clamp(16px, 2.2vw, 28px);
+        box-shadow: var(--shadow);
+        margin-bottom: clamp(14px, 2vh, 22px);
+      }
+      .bench .big {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: clamp(36px, 5vw, 62px);
+        color: var(--clay);
+        line-height: 0.92;
+      }
+      .bench .lead {
+        font-weight: 700;
+        font-size: clamp(14px, 1.5vw, 18px);
+        color: var(--ink);
+        max-width: 24ch;
+      }
+      .bench .lead small {
+        display: block;
+        font-weight: 600;
+        font-size: 12px;
+        color: var(--clay);
+        margin-top: 3px;
+      }
+      .bench .cmp {
+        display: flex;
+        gap: clamp(16px, 2.4vw, 34px);
+        margin-right: auto;
+        flex-wrap: wrap;
+      }
+      .bench .cmp div {
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        text-align: center;
+      }
+      .bench .cmp b {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: clamp(18px, 2vw, 26px);
+        color: var(--pine);
+        line-height: 1;
+      }
 
       /* ===== ORG CHART ===== */
       .org-top {
@@ -672,6 +834,163 @@
         font-size: 12.5px;
         color: var(--ink-soft);
         line-height: 1.45;
+      }
+      .dom {
+        display: flex;
+        flex-direction: column;
+      }
+      .dom p {
+        flex: 1;
+      }
+      .domains.compact {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(10px, 1.1vw, 16px);
+      }
+      .domstat {
+        display: flex;
+        gap: 18px;
+        margin-top: 11px;
+        padding-top: 9px;
+        border-top: 1px dashed var(--line);
+      }
+      .domstat b {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: clamp(16px, 1.6vw, 20px);
+        color: var(--clay);
+        line-height: 1;
+      }
+      .domstat span {
+        display: block;
+        font-size: 10.5px;
+        color: var(--ink-soft);
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .dom .prog {
+        margin-top: 11px;
+        padding-top: 9px;
+        border-top: 1px dashed var(--line);
+        font-size: 11px;
+        color: var(--ink-soft);
+        font-weight: 600;
+        line-height: 1.35;
+      }
+      @media (max-width: 1100px) {
+        .domains.compact {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 880px) {
+        .domains.compact {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ===== PURPOSE / MANDATE ===== */
+      .mandate {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-right: 6px solid var(--clay);
+        border-radius: 15px;
+        padding: clamp(22px, 3vw, 40px);
+        box-shadow: var(--shadow);
+      }
+      .mandate-tag {
+        display: inline-block;
+        font-weight: 700;
+        font-size: clamp(12px, 1.2vw, 14.5px);
+        letter-spacing: 0.03em;
+        color: var(--clay);
+        background: var(--paper-2);
+        border: 1px solid var(--line-strong);
+        padding: 6px 15px;
+        border-radius: 8px;
+        margin-bottom: clamp(13px, 1.8vh, 20px);
+      }
+      .mandate p {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(18px, 2.25vw, 30px);
+        line-height: 1.5;
+        color: var(--ink);
+        max-width: 52ch;
+      }
+      .mandate b {
+        color: var(--pine);
+        font-weight: 700;
+      }
+      .mandate b.hl {
+        color: var(--clay);
+      }
+      .purpose-lead {
+        font-size: clamp(14px, 1.55vw, 19px);
+        color: var(--ink-soft);
+        margin: clamp(16px, 2.6vh, 28px) 0 clamp(12px, 1.8vh, 18px);
+        font-weight: 500;
+        max-width: 70ch;
+      }
+      .purpose-lead b {
+        color: var(--pine);
+        font-weight: 700;
+      }
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(12px, 1.4vw, 18px);
+      }
+      .pillar {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--clay);
+        border-radius: 13px;
+        padding: clamp(15px, 1.7vw, 22px);
+        box-shadow: var(--shadow);
+      }
+      .pillar .ic {
+        width: 30px;
+        height: 30px;
+        color: var(--clay);
+        margin-bottom: 10px;
+      }
+      .pillar h4 {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: clamp(16px, 1.7vw, 21px);
+        color: var(--pine);
+      }
+      .pillar p {
+        margin-top: 6px;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        line-height: 1.45;
+      }
+      .scopes {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: clamp(16px, 2.4vh, 26px);
+      }
+      .scopes .lbl {
+        font-size: 13px;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+      .scopes .chip {
+        font-family: var(--serif);
+        font-weight: 700;
+        color: var(--pine);
+        background: var(--paper-2);
+        border: 1px solid var(--line-strong);
+        padding: 7px 18px;
+        border-radius: 22px;
+        font-size: clamp(13px, 1.4vw, 16px);
+      }
+      @media (max-width: 880px) {
+        .pillars {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       /* ===== TWO-COLUMN LAYOUT ===== */
@@ -1122,141 +1441,98 @@
         </div>
       </section>
 
-      <!-- 2 · AT A GLANCE -->
-      <section class="slide" data-name="תמונת מצב">
+      <!-- 2 · PURPOSE / MANDATE -->
+      <section class="slide" data-name="ייעוד האגף">
         <div class="inner">
           <div class="slide-head">
-            <div class="eyebrow reveal">במבט מהיר</div>
-            <h2 class="reveal d1">היקף הפעילות של האגף</h2>
-            <p class="sub reveal d1">
-              האגף מלווה היום למעלה מ‑5,300 תושבים ב‑1,292 תיקים פעילים, באמצעות
-              שלושה צוותים ו‑45 אנשי מקצוע.
+            <div class="eyebrow reveal">תכלית האגף</div>
+            <h2 class="reveal d1">האחריות שלנו — מעוגנת בחוק</h2>
+          </div>
+          <div class="mandate reveal d1">
+            <div class="mandate-tag">§ חוק שירותי הסעד</div>
+            <p>
+              על פי חוק, האחריות המלאה והישירה לדאוג לתושבים הנמצאים במצבי
+              <b class="hl">משבר, קושי וסיכון</b> — מוטלת על
+              <b>הרשות המקומית</b>.
             </p>
           </div>
-          <div class="kpi-grid">
-            <div class="kpi reveal d1">
-              <div class="num">1,292</div>
-              <div class="lbl">תיקים פעילים</div>
-              <div class="desc">משקי בית בטיפול שוטף</div>
+          <p class="purpose-lead reveal d2">
+            האגף הוא הגוף שמממש אחריות זו בפועל — בהנחיה, בפיקוח ובתקצוב של
+            <b>משרד הרווחה</b> — ומספק מענה לפרט, למשפחה ולקהילה:
+          </p>
+          <div class="pillars reveal d3">
+            <div class="pillar">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M12 3l8 3.5V12c0 4.6-3.2 7.6-8 9-4.8-1.4-8-4.4-8-9V6.5z"
+                />
+              </svg>
+              <h4>הגנה</h4>
+              <p>שמירה על שלומם וביטחונם של תושבים במצבי סיכון.</p>
             </div>
-            <div class="kpi clay reveal d2">
-              <div class="num">5,330</div>
-              <div class="lbl">נפשות בטיפול</div>
-              <div class="desc">ראשי משפחה, בני זוג וילדים</div>
+            <div class="pillar">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"
+                />
+              </svg>
+              <h4>טיפול</h4>
+              <p>מענה מקצועי מותאם אישית לצרכים ולמצוקות.</p>
             </div>
-            <div class="kpi gold reveal d2">
-              <div class="num">2,880</div>
-              <div class="lbl">ילדים</div>
-              <div class="desc">בתוך המשפחות בטיפול</div>
+            <div class="pillar">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <circle cx="8" cy="9" r="2.5" />
+                <circle cx="16" cy="9" r="2.5" />
+                <path
+                  d="M3 20c0-3 2.5-4.5 5-4.5M21 20c0-3-2.5-4.5-5-4.5M9 15h6"
+                />
+              </svg>
+              <h4>תמיכה</h4>
+              <p>ליווי מתמשך של הפרט והמשפחה לאורך זמן.</p>
             </div>
-            <div class="kpi sage reveal d3">
-              <div class="num">45</div>
-              <div class="lbl">אנשי צוות</div>
-              <div class="desc">ב‑3 צוותים + הנהלה</div>
-            </div>
-            <div class="kpi reveal d3">
-              <div class="num">₪41.4<small>M</small></div>
-              <div class="lbl">תקציב רווחה שנתי</div>
-              <div class="desc">משרד הרווחה + מועצה</div>
-            </div>
-            <div class="kpi clay reveal d4">
-              <div class="num">₪17.5<small>M</small></div>
-              <div class="lbl">בוצע עד מאי</div>
-              <div class="desc">כ‑42% מהתקציב השנתי</div>
-            </div>
-            <div class="kpi gold reveal d4">
-              <div class="num">552</div>
-              <div class="lbl">השמות פעילות</div>
-              <div class="desc">מתוך 1,402 החלטות</div>
-            </div>
-            <div class="kpi sage reveal d4">
-              <div class="num">180</div>
-              <div class="lbl">דיוני ועדה</div>
-              <div class="desc">ועדות תכנון טיפול</div>
-            </div>
-          </div>
-          <div class="source reveal d4">
-            דוח ספירת תיקים · דוח התחשבנות משרד הרווחה · חוברת תקציב · דוח השמות
-            · דוח ועדות · מבנה צוות
-          </div>
-        </div>
-      </section>
-
-      <!-- 3 · WHO WE SERVE -->
-      <section class="slide" data-name="את מי אנו משרתים">
-        <div class="inner">
-          <div class="slide-head">
-            <div class="eyebrow reveal">את מי אנו משרתים</div>
-            <h2 class="reveal d1">5,330 נפשות ב‑1,292 משקי בית</h2>
-          </div>
-          <div class="pop reveal d1">
-            <div class="cell">
-              <div class="big">1,699</div>
-              <div class="cap">ראשי משפחה</div>
-              <div class="pct"></div>
-            </div>
-            <div class="cell">
-              <div class="big">750</div>
-              <div class="cap">בני / בנות זוג</div>
-              <div class="pct"></div>
-            </div>
-            <div class="cell">
-              <div class="big">2,880</div>
-              <div class="cap">ילדים</div>
-              <div class="pct"></div>
+            <div class="pillar">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path d="M4 20l5-5 4 4 7-7" />
+                <path d="M17 8h4v4" />
+              </svg>
+              <h4>שיקום</h4>
+              <p>החזרה לתפקוד, לעצמאות ולחיים בקהילה.</p>
             </div>
           </div>
-          <div class="split even" style="margin-top: clamp(18px, 3vh, 34px)">
-            <div class="panel reveal d2">
-              <h3>תנועת התיקים בשנת 2026</h3>
-              <div class="statline">
-                <div class="s"><b>76</b><span>תיקים חדשים נפתחו</span></div>
-                <div class="s"><b>29</b><span>תיקים חזרו לפעילות</span></div>
-                <div class="s"><b>28</b><span>תיקים נסגרו</span></div>
-              </div>
-              <div class="note">
-                בתחילת השנה היו 1,346 תיקים פעילים. הפער בין נפתחו לנסגרו מצביע
-                על מגמת גידול מתמשכת בהיקף הצרכים.
-              </div>
-            </div>
-            <div class="panel reveal d3">
-              <h3>הרכב הטיפול</h3>
-              <div class="barlist">
-                <div class="bar-row">
-                  <div class="bar-lbl">ילדים</div>
-                  <div class="bar-track">
-                    <div class="bar-fill" style="--v: 100%"></div>
-                  </div>
-                  <div class="bar-val">2,880</div>
-                </div>
-                <div class="bar-row">
-                  <div class="bar-lbl">ראשי משפחה</div>
-                  <div class="bar-track">
-                    <div class="bar-fill c-clay" style="--v: 59%"></div>
-                  </div>
-                  <div class="bar-val">1,699</div>
-                </div>
-                <div class="bar-row">
-                  <div class="bar-lbl">בני זוג</div>
-                  <div class="bar-track">
-                    <div class="bar-fill c-gold" style="--v: 26%"></div>
-                  </div>
-                  <div class="bar-val">750</div>
-                </div>
-              </div>
-              <div class="note">
-                למעלה ממחצית מהנפשות בטיפול הן ילדים — מה שמכוון משאבים רבים
-                למענים לילדים ולנוער.
-              </div>
-            </div>
-          </div>
-          <div class="source reveal d3">
-            דוח ספירת תיקים — תיקים פתוחים · מצב תיקים כללי 2026
+          <div class="scopes reveal d4">
+            <span class="lbl">המעגלים שאנו משרתים:</span>
+            <span class="chip">הפרט</span>
+            <span class="chip">המשפחה</span>
+            <span class="chip">הקהילה</span>
           </div>
         </div>
       </section>
 
-      <!-- 4 · ORG STRUCTURE -->
+      <!-- 3 · ORG STRUCTURE -->
       <section class="slide" data-name="מבנה הארגון">
         <div class="inner">
           <div class="slide-head">
@@ -1270,7 +1546,8 @@
             </div>
             <div class="org-aux">
               <span>מזכירת האגף · <b>יעלה בויארסקי</b></span
-              ><span>תחשיבנית · <b>רחל לוי</b></span>
+              ><span>תחשיבנית · <b>רחל לוי</b></span
+              ><span>תחשיבן · <b>דוד זף</b></span>
             </div>
           </div>
           <div class="org-stem reveal d1"></div>
@@ -1321,7 +1598,7 @@
         </div>
       </section>
 
-      <!-- 5 · FULL ROSTER -->
+      <!-- 4 · FULL ROSTER -->
       <section class="slide" data-name="הצוות המלא">
         <div class="inner">
           <div class="slide-head">
@@ -1393,14 +1670,104 @@
         </div>
       </section>
 
+      <!-- 5 · AT A GLANCE -->
+      <section class="slide" data-name="תמונת מצב">
+        <div class="inner">
+          <div class="slide-head">
+            <div class="eyebrow reveal">במבט מהיר</div>
+            <h2 class="reveal d1">היקף הפעילות של האגף</h2>
+            <p class="sub reveal d1">
+              האגף מלווה היום למעלה מ‑5,300 תושבים ב‑1,292 תיקים פעילים, באמצעות
+              שלושה צוותים ו‑45 אנשי מקצוע.
+            </p>
+          </div>
+          <div class="bench reveal d1">
+            <div class="big">16.9%</div>
+            <div class="lead">
+              מהתושבים מקבלים שירות ברווחה<small
+                >מעל הממוצע הארצי וגם מעל רשויות דומות</small
+              >
+            </div>
+            <div class="cmp">
+              <div><b>15.2%</b>ממוצע ארצי</div>
+              <div><b>13.8%</b>רשויות דומות</div>
+            </div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi reveal d1">
+              <div class="num">1,292</div>
+              <div class="lbl">תיקים פעילים</div>
+              <div class="desc">משקי בית בטיפול שוטף</div>
+            </div>
+            <div class="kpi clay reveal d2">
+              <div class="num">5,330</div>
+              <div class="lbl">נפשות בטיפול</div>
+              <div class="desc">ראשי משפחה, בני זוג וילדים</div>
+            </div>
+            <div class="kpi gold reveal d2">
+              <div class="num">2,880</div>
+              <div class="lbl">ילדים</div>
+              <div class="desc">בתוך המשפחות בטיפול</div>
+            </div>
+            <div class="kpi sage reveal d3">
+              <div class="num">45</div>
+              <div class="lbl">אנשי צוות</div>
+              <div class="desc">ב‑3 צוותים + הנהלה</div>
+            </div>
+            <div class="kpi reveal d3">
+              <div class="num">₪41.4<small>M</small></div>
+              <div class="lbl">תקציב רווחה שנתי</div>
+              <div class="desc">משרד הרווחה + מועצה</div>
+            </div>
+            <div class="kpi clay reveal d4">
+              <div class="num">₪17.5<small>M</small></div>
+              <div class="lbl">בוצע עד מאי</div>
+              <div class="desc">כ‑42% מהתקציב השנתי</div>
+            </div>
+            <div class="kpi gold reveal d4">
+              <div class="num">552</div>
+              <div class="lbl">השמות פעילות</div>
+              <div class="desc">מתוך 1,402 החלטות</div>
+            </div>
+            <div class="kpi sage reveal d4">
+              <div class="num">180</div>
+              <div class="lbl">דיוני ועדה</div>
+              <div class="desc">ועדות תכנון טיפול</div>
+            </div>
+          </div>
+          <div
+            class="panel reveal d4"
+            style="margin-top: clamp(16px, 2.6vh, 30px)"
+          >
+            <h3>תנועת התיקים בשנת 2026</h3>
+            <div class="statline">
+              <div class="s"><b>76</b><span>תיקים חדשים נפתחו</span></div>
+              <div class="s"><b>29</b><span>תיקים חזרו לפעילות</span></div>
+              <div class="s"><b>28</b><span>תיקים נסגרו</span></div>
+            </div>
+            <div class="note">
+              בתחילת השנה היו 1,346 תיקים פעילים. הפער בין נפתחו לנסגרו מצביע על
+              מגמת גידול מתמשכת בהיקף הצרכים.
+            </div>
+          </div>
+          <div class="source reveal d4">
+            דוח ספירת תיקים · דוח התחשבנות משרד הרווחה · חוברת תקציב · דוח השמות
+            · דוח ועדות · מבנה צוות
+          </div>
+        </div>
+      </section>
+
       <!-- 6 · WHAT WE DO -->
       <section class="slide" data-name="תחומי המענה">
         <div class="inner">
           <div class="slide-head">
             <div class="eyebrow reveal">מה אנחנו עושים</div>
             <h2 class="reveal d1">תחומי המענה של האגף</h2>
+            <p class="sub reveal d1">
+              11 תחומי מענה, ולצד כל אחד — מספר העובדים והיקף המשרות המוקצה לו.
+            </p>
           </div>
-          <div class="domains">
+          <div class="domains compact">
             <div class="dom reveal d1">
               <svg
                 class="ic"
@@ -1414,9 +1781,12 @@
               </svg>
               <h4>פרט ומשפחה</h4>
               <p>
-                עו"ס משפחה לכל יישוב, סדרי דין, וועדות תכנון טיפול וליווי שוטף
-                של משקי בית.
+                עו"ס משפחה לכל יישוב, ועדות תכנון טיפול וליווי שוטף של משקי בית.
               </p>
+              <div class="domstat">
+                <div><b>9</b><span>עובדים</span></div>
+                <div><b>6.1</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d1">
               <svg
@@ -1431,10 +1801,47 @@
                 <path d="M16 11l2 2 4-4" />
               </svg>
               <h4>ילדים ונוער</h4>
-              <p>
-                חוק נוער, מועדוניות, מעונות יום, פנימיות, קייטנות ומרכז
-                הורים‑ילדים.
-              </p>
+              <p>מועדוניות, מעונות יום, פנימיות, קייטנות ומרכז הורים‑ילדים.</p>
+              <div class="prog">מענה תכניתי · מסגרות חוץ‑ביתיות וקהילתיות</div>
+            </div>
+            <div class="dom reveal d1">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" />
+                <path d="M9 11l2 2 4-4" />
+              </svg>
+              <h4>חוק נוער</h4>
+              <p>הגנה על קטינים בסיכון, חקירות ילדים ודיווח לבית המשפט.</p>
+              <div class="domstat">
+                <div><b>2</b><span>עובדים</span></div>
+                <div><b>1.5</b><span>משרות</span></div>
+              </div>
+            </div>
+            <div class="dom reveal d2">
+              <svg
+                class="ic"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+                />
+                <path d="M14 3v5h5" />
+                <path d="M9 13h6M9 17h4" />
+              </svg>
+              <h4>סדרי דין</h4>
+              <p>תסקירים והמלצות לבתי המשפט ויו"ר ועדות תכנון טיפול.</p>
+              <div class="domstat">
+                <div><b>2</b><span>עובדים</span></div>
+                <div><b>1.6</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d2">
               <svg
@@ -1448,7 +1855,11 @@
                 <path d="M6 21v-4M18 21v-4M6 17l6-4 6 4" />
               </svg>
               <h4>זקנה</h4>
-              <p>רכזות זקנה, סומכוֹת, שעות סיעוד וסיוע בבית, וסביבה תומכת.</p>
+              <p>רכזות זקנה, סומכוֹת, שעות סיעוד וסיוע בבית וסביבה תומכת.</p>
+              <div class="domstat">
+                <div><b>4</b><span>עובדים</span></div>
+                <div><b>2.7</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d2">
               <svg
@@ -1462,7 +1873,11 @@
                 <path d="M12 8v7M8 11h8M9 21l3-6 3 6" />
               </svg>
               <h4>מוגבלות · צמ"יד</h4>
-              <p>רכזת צמ"יד, מרכז משפחות, מעונות יום, מע"ש, נופשונים והסעות.</p>
+              <p>רכזת צמ"יד, מרכז משפחות, מעונות יום, מע"ש ונופשונים.</p>
+              <div class="domstat">
+                <div><b>2</b><span>עובדים</span></div>
+                <div><b>1.5</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d3">
               <svg
@@ -1475,7 +1890,11 @@
                 <path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" />
               </svg>
               <h4>מניעת אלימות</h4>
-              <p>רכזת מניעת אלימות, אלמ"ב קהילתית, מרכז למניעת אלימות ומקלט.</p>
+              <p>רכזת מניעת אלימות, אלמ"ב קהילתית ומרכז למניעת אלימות.</p>
+              <div class="domstat">
+                <div><b>4</b><span>עובדים</span></div>
+                <div><b>3.1</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d3">
               <svg
@@ -1488,9 +1907,13 @@
                 <path d="M5 12h4l2-5 3 10 2-5h3" />
               </svg>
               <h4>טיפול בהתמכרויות</h4>
-              <p>יחידה ייעודית להתמכרויות — מענה נפרד למבוגרים ולנוער.</p>
+              <p>יחידה ייעודית — מענה נפרד למבוגרים ולנוער.</p>
+              <div class="domstat">
+                <div><b>4</b><span>עובדים</span></div>
+                <div><b>2.8</b><span>משרות</span></div>
+              </div>
             </div>
-            <div class="dom reveal d4">
+            <div class="dom reveal d3">
               <svg
                 class="ic"
                 viewBox="0 0 24 24"
@@ -1503,9 +1926,11 @@
                 />
               </svg>
               <h4>פגיעות מיניות ושכול</h4>
-              <p>
-                טיפול בנפגעי פגיעות מיניות (בגירים) וליווי במצבי שכול ואובדן.
-              </p>
+              <p>טיפול בנפגעי פגיעות מיניות וליווי במצבי שכול ואובדן.</p>
+              <div class="domstat">
+                <div><b>3</b><span>עובדים</span></div>
+                <div><b>2.0</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d4">
               <svg
@@ -1522,9 +1947,11 @@
                 />
               </svg>
               <h4>זוגיות ומשפחה</h4>
-              <p>
-                תחנה לטיפול זוגי‑משפחתי ותכנית "צעדים ראשונים" למשפחות צעירות.
-              </p>
+              <p>תחנה לטיפול זוגי‑משפחתי ותכנית "צעדים ראשונים".</p>
+              <div class="domstat">
+                <div><b>3</b><span>עובדים</span></div>
+                <div><b>2.3</b><span>משרות</span></div>
+              </div>
             </div>
             <div class="dom reveal d4">
               <svg
@@ -1538,13 +1965,21 @@
                 <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
               </svg>
               <h4>תעסוקה ומיצוי זכויות</h4>
-              <p>
-                ית"ד, שילוב ותעסוקה נתמכת, מיצוי זכויות ותכנית "נושמים לרווחה".
-              </p>
+              <p>ית"ד ומת"ר, תעסוקה נתמכת, מיצוי זכויות ו"נושמים לרווחה".</p>
+              <div class="domstat">
+                <div><b>6</b><span>עובדים</span></div>
+                <div><b>4.0</b><span>משרות</span></div>
+              </div>
             </div>
           </div>
+          <div class="note reveal d4" style="margin-top: 14px">
+            בנוסף: 3 ראשי צוותים ו‑4 בהנהלת האגף (מנהלת, מזכירה ו‑2 תחשיבנים —
+            רחל לוי ודוד זף). היקפי המשרה מתוך דוח ההקצבה; ל‑3 עובדים אין רישום
+            בדוח זה. "ילדים ונוער" ניתן ברובו כמענה תכניתי.
+          </div>
           <div class="source reveal d4">
-            מבנה צוות פרט ומשפחה · דוח השמות (סוגי מסגרות)
+            מבנה צוות פרט ומשפחה (איוש) · דוח הקצבה משרד הרווחה — מאי (היקפי
+            משרה)
           </div>
         </div>
       </section>
@@ -1675,6 +2110,10 @@
           <div class="slide-head">
             <div class="eyebrow reveal">איפה — פריסה גאוגרפית</div>
             <h2 class="reveal d1">היכן מרוכז הטיפול</h2>
+            <p class="sub reveal d1">
+              המספר — סוגיות טיפוליות ביישוב; האחוז — שיעורן מתוך אוכלוסיית
+              היישוב (למ"ס).
+            </p>
           </div>
           <div class="split">
             <div class="barlist reveal d2">
@@ -1683,84 +2122,84 @@
                 <div class="bar-track">
                   <div class="bar-fill" style="--v: 100%"></div>
                 </div>
-                <div class="bar-val">295</div>
+                <div class="bar-val">295<small class="pct">6.8%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">בת עין</div>
                 <div class="bar-track">
                   <div class="bar-fill" style="--v: 87%"></div>
                 </div>
-                <div class="bar-val">256</div>
+                <div class="bar-val">256<small class="pct">14.8%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">אלון שבות</div>
                 <div class="bar-track">
                   <div class="bar-fill" style="--v: 78%"></div>
                 </div>
-                <div class="bar-val">231</div>
+                <div class="bar-val">231<small class="pct">7.6%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">נוקדים</div>
                 <div class="bar-track">
                   <div class="bar-fill" style="--v: 64%"></div>
                 </div>
-                <div class="bar-val">189</div>
+                <div class="bar-val">189<small class="pct">6.1%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">אלעזר</div>
                 <div class="bar-track">
                   <div class="bar-fill c-gold" style="--v: 45%"></div>
                 </div>
-                <div class="bar-val">133</div>
+                <div class="bar-val">133<small class="pct">5.1%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">נווה דניאל</div>
                 <div class="bar-track">
                   <div class="bar-fill c-gold" style="--v: 43%"></div>
                 </div>
-                <div class="bar-val">128</div>
+                <div class="bar-val">128<small class="pct">5.4%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">מעלה עמוס</div>
                 <div class="bar-track">
                   <div class="bar-fill c-gold" style="--v: 29%"></div>
                 </div>
-                <div class="bar-val">87</div>
+                <div class="bar-val">87<small class="pct">9.6%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">אספר</div>
                 <div class="bar-track">
                   <div class="bar-fill c-sage" style="--v: 26%"></div>
                 </div>
-                <div class="bar-val">76</div>
+                <div class="bar-val">76<small class="pct">6.2%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">הר גילה</div>
                 <div class="bar-track">
                   <div class="bar-fill c-sage" style="--v: 20%"></div>
                 </div>
-                <div class="bar-val">60</div>
+                <div class="bar-val">60<small class="pct">3.6%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">כרמי צור</div>
                 <div class="bar-track">
                   <div class="bar-fill c-sage" style="--v: 20%"></div>
                 </div>
-                <div class="bar-val">60</div>
+                <div class="bar-val">60<small class="pct">6.1%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">קדר</div>
                 <div class="bar-track">
                   <div class="bar-fill c-sage" style="--v: 20%"></div>
                 </div>
-                <div class="bar-val">59</div>
+                <div class="bar-val">59<small class="pct">3.6%</small></div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">ראש צורים</div>
                 <div class="bar-track">
                   <div class="bar-fill c-sage" style="--v: 12%"></div>
                 </div>
-                <div class="bar-val">35</div>
+                <div class="bar-val">35<small class="pct">3.6%</small></div>
               </div>
             </div>
             <div class="reveal d3">
@@ -1781,19 +2220,89 @@
                   נוקדים ומעלה עמוס במזרח; בת עין, אלון שבות ואלעזר במערב.
                 </p>
                 <div class="note">
-                  14 יישובים מקבלים מענה, עם ריכוז גבוה של סוגיות בתקוע, בת עין
-                  ואלון שבות. (כולל גם מגדל עוז וכפר עציון — 21 כל אחד.)
+                  14 יישובים מקבלים מענה. בערכים מוחלטים הריכוז הגבוה ביותר
+                  בתקוע, בת עין ואלון שבות — אך ביחס לאוכלוסייה בולטות בת עין
+                  (14.8%) ומעלה עמוס (9.6%).
                 </div>
               </div>
             </div>
           </div>
           <div class="source reveal d3">
-            דוח נזקקויות לפי יישוב · מבנה צוות (אזורי טיפול)
+            דוח נזקקויות לפי יישוב · נתוני אוכלוסייה: למ"ס (מערכת מכלול) · מבנה
+            צוות (אזורי טיפול)
           </div>
         </div>
       </section>
 
-      <!-- 9 · SERVICES -->
+      <!-- 9 · COVERAGE BY TOWN -->
+      <section class="slide" data-name="מקבלי שירות לפי יישוב">
+        <div class="inner">
+          <div class="slide-head">
+            <div class="eyebrow reveal">פריסה לפי יישוב</div>
+            <h2 class="reveal d1">מקבלי שירות לפי יישוב</h2>
+            <p class="sub reveal d1">
+              אוכלוסייה ומספר מקבלי השירות בכל יישוב — בסיס לתכנון פריסת
+              השירותים.
+            </p>
+          </div>
+          <div class="split">
+            <div class="reveal d2">
+              <table class="dtable">
+                <thead>
+                  <tr>
+                    <th>יישוב</th>
+                    <th class="c">אשכול</th>
+                    <th class="c">תושבים</th>
+                    <th class="c">מקבלי שירות</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="nm">תקוע</td><td class="c">6</td><td class="c">4,326</td><td class="c tot">769</td></tr>
+                  <tr><td class="nm">בת עין</td><td class="c">3</td><td class="c">1,730</td><td class="c tot">664</td></tr>
+                  <tr><td class="nm">נוקדים</td><td class="c">5</td><td class="c">3,093</td><td class="c tot">572</td></tr>
+                  <tr><td class="nm">אלון שבות</td><td class="c">7</td><td class="c">3,046</td><td class="c tot">475</td></tr>
+                  <tr><td class="nm">מעלה עמוס</td><td class="c">2</td><td class="c">906</td><td class="c tot">353</td></tr>
+                  <tr><td class="nm">אספר</td><td class="c">3</td><td class="c">1,228</td><td class="c tot">350</td></tr>
+                  <tr><td class="nm">אלעזר</td><td class="c">7</td><td class="c">2,615</td><td class="c tot">329</td></tr>
+                  <tr><td class="nm">נווה דניאל</td><td class="c">7</td><td class="c">2,355</td><td class="c tot">328</td></tr>
+                  <tr><td class="nm">כרמי צור</td><td class="c">5</td><td class="c">979</td><td class="c tot">169</td></tr>
+                  <tr><td class="nm">קדר</td><td class="c">7</td><td class="c">1,649</td><td class="c tot">141</td></tr>
+                  <tr><td class="nm">הר גילה</td><td class="c">7</td><td class="c">1,656</td><td class="c tot">116</td></tr>
+                  <tr><td class="nm">ראש צורים</td><td class="c">7</td><td class="c">978</td><td class="c tot">104</td></tr>
+                  <tr><td class="nm">כפר עציון</td><td class="c">4</td><td class="c">1,370</td><td class="c tot">79</td></tr>
+                  <tr><td class="nm">מגדל עוז</td><td class="c">3</td><td class="c">572</td><td class="c tot">58</td></tr>
+                  <tr class="total"><td class="nm">סה"כ</td><td class="c">—</td><td class="c">26,503</td><td class="c tot">4,507</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="reveal d3">
+              <div class="panel">
+                <h3>פערים בין יישובים</h3>
+                <p
+                  style="
+                    font-size: 14px;
+                    color: var(--ink-soft);
+                    line-height: 1.6;
+                  "
+                >
+                  בסך הכל <b style="color: var(--pine)">4,507 מקבלי שירות</b> מתוך
+                  26,503 תושבים — כ‑<b style="color: var(--pine)">17%</b>. השיעור
+                  היישובי נע בין כ‑6% (כפר עציון) ל‑39% (מעלה עמוס).
+                </p>
+                <div class="note">
+                  שיעור הפנייה לשירות גבוה במיוחד ביישובים מאשכול סוציו‑אקונומי
+                  נמוך — מעלה עמוס (אשכול 2), בת עין ואספר (אשכול 3).
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="source reveal d3">
+            דוח מכלול — אוכלוסייה ומקבלי שירות לפי יישוב (T20)
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 · SERVICES -->
       <section class="slide" data-name="השירותים">
         <div class="inner">
           <div class="slide-head">
@@ -1912,7 +2421,140 @@
         </div>
       </section>
 
-      <!-- 10 · MONEY OVERVIEW -->
+      <!-- 11 · PLACEMENTS IN / OUT -->
+      <section class="slide" data-name="השמות · מקומי מול חוץ">
+        <div class="inner">
+          <div class="slide-head">
+            <div class="eyebrow reveal">מסגרות והשמות</div>
+            <h2 class="reveal d1">השמות במסגרות — בתוך המועצה ומחוצה לה</h2>
+            <p class="sub reveal d1">
+              מתוך 840 השמות של תושבי המועצה — היכן הן מתבצעות, ומה הפוטנציאל
+              לפיתוח שירותים מקומיים.
+            </p>
+          </div>
+          <div class="split">
+            <div class="barlist reveal d2">
+              <div class="bar-row">
+                <div class="bar-lbl">שירותים אישיים וחברתיים</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 100%">
+                    <span class="bar-spent" style="--s: 94%"></span>
+                  </div>
+                </div>
+                <div class="bar-val">390<small class="pct">6% בחוץ</small></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-lbl">מוגבלויות</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 60%">
+                    <span class="bar-spent" style="--s: 40%"></span>
+                  </div>
+                </div>
+                <div class="bar-val">233<small class="pct">60% בחוץ</small></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-lbl">אזרחים ותיקים</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 33%">
+                    <span class="bar-spent" style="--s: 91%"></span>
+                  </div>
+                </div>
+                <div class="bar-val">128<small class="pct">9% בחוץ</small></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-lbl">שלם (שיקום והתמכרויות)</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 23%">
+                    <span class="bar-spent" style="--s: 85%"></span>
+                  </div>
+                </div>
+                <div class="bar-val">88<small class="pct">15% בחוץ</small></div>
+              </div>
+            </div>
+            <div class="reveal d3">
+              <div class="kpi-grid" style="grid-template-columns: 1fr 1fr">
+                <div class="kpi">
+                  <div class="num">650</div>
+                  <div class="lbl">השמות מקומיות</div>
+                  <div class="desc">77% — במסגרות בגוש עציון</div>
+                </div>
+                <div class="kpi clay">
+                  <div class="num">190</div>
+                  <div class="lbl">השמות מחוץ למועצה</div>
+                  <div class="desc">23% — בעיקר ירושלים (93)</div>
+                </div>
+              </div>
+              <div class="note">
+                החלק הכהה = השמות מקומיות; אורך הסרגל = סך ההשמות במינהל.
+                <b>מינהל המוגבלויות חריג</b> — 60% מההשמות מחוץ למועצה (הוסטלים,
+                מעונות יום ומע"ש), וכאן הפוטנציאל הגדול לפיתוח מסגרות מקומיות.
+              </div>
+              <div class="statline" style="margin-top: 14px">
+                <div class="s">
+                  <b>2,469</b><span>מקבלי גמלאות ביטוח לאומי</span>
+                </div>
+                <div class="s"><b>1,387</b><span>אזרחים ותיקים</span></div>
+                <div class="s"><b>1,038</b><span>נכה / ילד נכה</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="source reveal d3">
+            דוח מכלול — מושמים לפי מינהל (T26) · לפי רשות (T27) · מקבלי גמלאות
+            ב"ל (C132/C133)
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 · FRAMEWORKS -->
+      <section class="slide" data-name="מסגרות פעילות">
+        <div class="inner">
+          <div class="slide-head">
+            <div class="eyebrow reveal">היכן ניתן השירות</div>
+            <h2 class="reveal d1">המסגרות הפועלות בגוש עציון</h2>
+            <p class="sub reveal d1">
+              המסגרות המובילות לפי סך מושמים. "מרשויות אחרות" = תושבי מועצות
+              שכנות המשתמשים במסגרות שבתחום המועצה.
+            </p>
+          </div>
+          <table class="dtable reveal d2">
+            <thead>
+              <tr>
+                <th>מסגרת</th>
+                <th>מינהל</th>
+                <th>סוג</th>
+                <th class="c">סה"כ</th>
+                <th class="c">מהמועצה</th>
+                <th class="c">מרשויות אחרות</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="nm">תוכנית להב"ה</td><td>שירותים אישיים</td><td>מועדון / מרכז קהילתי</td><td class="c tot">80</td><td class="c">80</td><td class="c">0</td></tr>
+              <tr><td class="nm">נתיבים להורות — גיל רך</td><td>שירותים אישיים</td><td>מרכז טיפולי</td><td class="c tot">51</td><td class="c">51</td><td class="c">0</td></tr>
+              <tr><td class="nm">קהילה תומכת קשישים</td><td>אזרחים ותיקים</td><td>סביבה תומכת</td><td class="c tot">50</td><td class="c">32</td><td class="c out">18</td></tr>
+              <tr><td class="nm">יד רחל — נתיבים להורות</td><td>שירותים אישיים</td><td>מרכז טיפולי</td><td class="c tot">46</td><td class="c">44</td><td class="c out">2</td></tr>
+              <tr><td class="nm">שילוב באמונה — בת עין</td><td>מוגבלויות</td><td>הוסטל</td><td class="c tot">42</td><td class="c">7</td><td class="c out">35</td></tr>
+              <tr><td class="nm">מרכז למשפחות גוש עציון</td><td>מוגבלויות</td><td>מעטפת</td><td class="c tot">39</td><td class="c">39</td><td class="c">0</td></tr>
+              <tr><td class="nm">יד רחל — נתיבים להורות יסוד</td><td>שירותים אישיים</td><td>מרכז טיפולי</td><td class="c tot">37</td><td class="c">37</td><td class="c">0</td></tr>
+              <tr><td class="nm">שילוב באמונה (ע"ר)</td><td>מוגבלויות</td><td>מעון יום לבוגרים</td><td class="c tot">36</td><td class="c">7</td><td class="c out">29</td></tr>
+              <tr><td class="nm">נתיבים להורות — מתבגרים</td><td>שירותים אישיים</td><td>מרכז טיפולי</td><td class="c tot">32</td><td class="c">28</td><td class="c out">4</td></tr>
+              <tr><td class="nm">מועדון מופ"ת תקוע</td><td>אזרחים ותיקים</td><td>מועדון / מרכז קהילתי</td><td class="c tot">30</td><td class="c">30</td><td class="c">0</td></tr>
+              <tr><td class="nm">שלווה — מעון יום גוש עציון</td><td>מוגבלויות</td><td>מעון יום</td><td class="c tot">29</td><td class="c">18</td><td class="c out">11</td></tr>
+              <tr><td class="nm">מועדון מועשר — ג.עציון</td><td>אזרחים ותיקים</td><td>מועדון / מרכז קהילתי</td><td class="c tot">28</td><td class="c">28</td><td class="c">0</td></tr>
+              <tr><td class="nm">שילוב באמונה — מע"ש</td><td>מוגבלויות</td><td>תעסוקה מוגנת</td><td class="c tot">27</td><td class="c">5</td><td class="c out">22</td></tr>
+            </tbody>
+          </table>
+          <div class="note reveal d3" style="margin-top: 14px">
+            מסגרות המוגבלויות (שילוב באמונה, סדנת שילוב) משרתות בעיקר תושבים
+            <b>מרשויות אחרות</b> — בעוד שתושבי גוש עציון עם מוגבלות מושמים לרוב
+            מחוץ למועצה.
+          </div>
+          <div class="source reveal d3">
+            דוח מכלול — מסגרות הפועלות עבור המועצה (T30)
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 · MONEY OVERVIEW -->
       <section class="slide" data-name="הכסף · תמונה כוללת">
         <div class="inner">
           <div class="slide-head">
@@ -2013,70 +2655,72 @@
         </div>
       </section>
 
-      <!-- 11 · WHERE IT GOES -->
-      <section class="slide" data-name="הכסף · לפי תכנית">
+      <!-- 14 · WHERE IT GOES -->
+      <section class="slide" data-name="הכסף · לפי תחום">
         <div class="inner">
           <div class="slide-head">
-            <div class="eyebrow reveal">לאן הולך הכסף · לפי תכנית</div>
-            <h2 class="reveal d1">ההוצאה לפי תכנית — עד מאי</h2>
+            <div class="eyebrow reveal">לאן הולך הכסף · לפי תחום</div>
+            <h2 class="reveal d1">ההוצאה לפי תחום — עד מאי</h2>
+            <p class="sub reveal d1">
+              הסרגל = התקציב השנתי לכל תחום; החלק הכהה = הביצוע בפועל עד מאי (כ‑42%
+              מהשנה).
+            </p>
           </div>
           <div class="split">
             <div class="barlist reveal d2">
               <div class="bar-row">
-                <div class="bar-lbl">אחזקת אוטיסטים במסגרות</div>
-                <div class="bar-track">
-                  <div class="bar-fill" style="--v: 100%"></div>
+                <div class="bar-lbl">מוגבלות, מש"ה ואוטיזם</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 100%">
+                    <span class="bar-spent" style="--s: 39%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪2.77M</div>
+                <div class="bar-val">₪8.81M<small class="ann">מ‑₪22.7M</small></div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">שכר עובדי המחלקה</div>
-                <div class="bar-track">
-                  <div class="bar-fill" style="--v: 96%"></div>
+                <div class="bar-lbl">ילד ונוער ומשפחה</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 31%">
+                    <span class="bar-spent" style="--s: 47%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪2.65M</div>
+                <div class="bar-val">₪3.35M<small class="ann">מ‑₪7.1M</small></div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">סידור במעונות מש"ה</div>
-                <div class="bar-track">
-                  <div class="bar-fill" style="--v: 69%"></div>
+                <div class="bar-lbl">כוח אדם ושכר</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 24%">
+                    <span class="bar-spent" style="--s: 52%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪1.90M</div>
+                <div class="bar-val">₪2.84M<small class="ann">מ‑₪5.5M</small></div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">אחזקת ילדים בפנימיות</div>
-                <div class="bar-track">
-                  <div class="bar-fill c-gold" style="--v: 54%"></div>
+                <div class="bar-lbl">סיכון: אלימות, התמכרויות ופגיעות</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 16%">
+                    <span class="bar-spent c-gold" style="--s: 46%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪1.48M</div>
+                <div class="bar-val">₪1.67M<small class="ann">מ‑₪3.7M</small></div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">משפחות וילדים בקהילה</div>
-                <div class="bar-track">
-                  <div class="bar-fill c-gold" style="--v: 40%"></div>
+                <div class="bar-lbl">מצוקה כלכלית, קהילה ותכניות</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 6%">
+                    <span class="bar-spent c-sage" style="--s: 34%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪1.12M</div>
+                <div class="bar-val">₪448K<small class="ann">מ‑₪1.3M</small></div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">אחזקת נכים בפנימיות</div>
-                <div class="bar-track">
-                  <div class="bar-fill c-gold" style="--v: 31%"></div>
+                <div class="bar-lbl">זקנה ואזרחים ותיקים</div>
+                <div class="bar-track budgettrack">
+                  <div class="bar-budget" style="--b: 5%">
+                    <span class="bar-spent c-sage" style="--s: 33%"></span>
+                  </div>
                 </div>
-                <div class="bar-val">₪867K</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-lbl">הסעות למ.יום מש"ה</div>
-                <div class="bar-track">
-                  <div class="bar-fill c-sage" style="--v: 27%"></div>
-                </div>
-                <div class="bar-val">₪741K</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-lbl">ילדים במעונות יום</div>
-                <div class="bar-track">
-                  <div class="bar-fill c-sage" style="--v: 17%"></div>
-                </div>
-                <div class="bar-val">₪482K</div>
+                <div class="bar-val">₪367K<small class="ann">מ‑₪1.1M</small></div>
               </div>
             </div>
             <div class="reveal d3">
@@ -2089,25 +2733,25 @@
                     line-height: 1.6;
                   "
                 >
-                  הטיפול באנשים עם מוגבלות —
-                  <b style="color: var(--pine)">אוטיזם, מש"ה ונכים</b> — הוא
-                  הרכיב הגדול ביותר בתקציב, ומחייב השמות במסגרות יקרות, מעונות
-                  יום והסעות.
+                  תחום ה<b style="color: var(--pine)">מוגבלות</b> מרכז את עיקר
+                  התקציב — <b style="color: var(--pine)">₪22.7M מתוך ₪41.4M</b>
+                  שנתי. עד מאי בוצעו בו ₪8.81M (39%): השמות במסגרות, מעונות יום,
+                  הסעות ותעסוקה מוגנת.
                 </p>
                 <div class="note">
-                  שכר עובדי המחלקה (₪2.65M) הוא הסעיף השני בגודלו — כשישית
-                  מההוצאה מופנית לכוח האדם המקצועי שנותן את השירות.
+                  סך התקציב השנתי ₪41.4M, מתוכו בוצעו ₪17.5M (42%). אורך הסרגל =
+                  גודל התקציב לכל תחום; החלק הכהה = שיעור הביצוע בתוכו.
                 </div>
               </div>
             </div>
           </div>
           <div class="source reveal d3">
-            דוח התחשבנות משרד הרווחה · חוברת תקציב (סעיפים)
+            דוח התחשבנות (ביצוע) · חוברת תקציב שנתי (הקצבה) — קיבוץ לפי תחום
           </div>
         </div>
       </section>
 
-      <!-- 12 · REPORTING CHANNELS -->
+      <!-- 15 · REPORTING CHANNELS -->
       <section class="slide" data-name="הכסף · ערוצי דיווח">
         <div class="inner">
           <div class="slide-head">
@@ -2181,7 +2825,7 @@
         </div>
       </section>
 
-      <!-- 12 · CASEWORK ENGINE -->
+      <!-- 16 · CASEWORK ENGINE -->
       <section class="slide" data-name="מנגנון העבודה">
         <div class="inner">
           <div class="slide-head">
@@ -2238,7 +2882,7 @@
                     <div class="bar-val">179</div>
                   </div>
                   <div class="bar-row">
-                    <div class="bar-lbl">הדר וינקלר</div>
+                    <div class="bar-lbl">הדר וינקלר(חופשת לידה)</div>
                     <div class="bar-track">
                       <div class="bar-fill" style="--v: 96%"></div>
                     </div>
@@ -2279,7 +2923,7 @@
         </div>
       </section>
 
-      <!-- 13 · CLOSING -->
+      <!-- 17 · CLOSING -->
       <section class="slide" id="end" data-name="סיכום">
         <div class="inner">
           <div class="eyebrow reveal">לסיכום</div>
