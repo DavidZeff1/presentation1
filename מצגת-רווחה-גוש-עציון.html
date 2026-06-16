@@ -527,7 +527,7 @@
       .dtable {
         width: 100%;
         border-collapse: collapse;
-        font-size: clamp(11px, 1.15vw, 13.5px);
+        font-size: clamp(12.5px, 1.35vw, 15px);
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 12px;
@@ -1384,8 +1384,8 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: clamp(8px, 1.1vw, 16px);
-        min-height: clamp(300px, 46vh, 440px);
+        gap: clamp(10px, 1.2vw, 18px);
+        min-height: clamp(360px, 58vh, 540px);
       }
       .hub-svg {
         position: absolute;
@@ -1401,7 +1401,7 @@
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 12px;
-        padding: clamp(7px, 0.9vw, 12px);
+        padding: clamp(10px, 1.2vw, 15px);
         box-shadow: var(--shadow);
         display: flex;
         flex-direction: column;
@@ -1411,12 +1411,12 @@
       .spoke h4 {
         font-family: var(--serif);
         font-weight: 700;
-        font-size: clamp(12.5px, 1.3vw, 16px);
+        font-size: clamp(14.5px, 1.55vw, 19px);
         color: var(--pine);
         line-height: 1.1;
       }
       .spoke p {
-        font-size: 10px;
+        font-size: 12.5px;
         color: var(--ink-soft);
         margin-top: 3px;
         line-height: 1.3;
@@ -1436,12 +1436,12 @@
       .hub-c h4 {
         font-family: var(--serif);
         font-weight: 900;
-        font-size: clamp(14px, 1.6vw, 20px);
+        font-size: clamp(17px, 2vw, 26px);
         color: #f4eee2;
         line-height: 1.1;
       }
       .hub-c p {
-        font-size: 10px;
+        font-size: 12.5px;
         color: var(--gold-soft);
         margin-top: 4px;
         line-height: 1.3;
@@ -1452,7 +1452,7 @@
         gap: clamp(10px, 1.4vh, 16px);
       }
       .aside-sep .lbl {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         color: var(--clay);
         letter-spacing: 0.02em;
@@ -1471,17 +1471,17 @@
         border: 1px solid var(--line);
         border-right: 5px solid var(--sage);
         border-radius: 12px;
-        padding: clamp(12px, 1.5vw, 18px);
+        padding: clamp(15px, 1.8vw, 22px);
         box-shadow: var(--shadow);
       }
       .sepbox h4 {
         font-family: var(--serif);
         font-weight: 900;
-        font-size: clamp(15px, 1.6vw, 20px);
+        font-size: clamp(17px, 1.9vw, 23px);
         color: var(--pine);
       }
       .sepbox p {
-        font-size: 11.5px;
+        font-size: 13px;
         color: var(--ink-soft);
         margin-top: 5px;
         line-height: 1.4;
@@ -1494,7 +1494,7 @@
 
       .spoke .sk,
       .sepbox .sk {
-        font-size: 9.5px;
+        font-size: 11.5px;
         color: var(--ink-soft);
         margin: 3px 0 1px;
         font-weight: 600;
@@ -1503,11 +1503,11 @@
       .sepbox .sk b {
         font-family: var(--serif);
         font-weight: 900;
-        font-size: 12px;
+        font-size: 14.5px;
         color: var(--clay);
       }
       .hub-c .sk {
-        font-size: 9.5px;
+        font-size: 11.5px;
         color: var(--gold-soft);
         margin: 3px 0 1px;
         font-weight: 600;
@@ -1515,8 +1515,25 @@
       .hub-c .sk b {
         font-family: var(--serif);
         font-weight: 900;
-        font-size: 12px;
+        font-size: 15px;
         color: #f4eee2;
+      }
+
+      .spoke .comm,
+      .sepbox .comm {
+        margin-top: 6px;
+        padding-top: 5px;
+        border-top: 1px dashed var(--line-strong);
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #5f7050;
+        line-height: 1.25;
+      }
+      .spoke .comm b,
+      .sepbox .comm b {
+        font-family: var(--serif);
+        font-size: 13px;
+        color: #3f5236;
       }
     </style>
   </head>
@@ -1967,6 +1984,7 @@
                 <h4>מניעת אלימות</h4>
                 <div class="sk"><b>4</b> עובדים · <b>3.1</b> משרות</div>
                 <p>מרכז למניעת אלימות</p>
+                <div class="comm">קהילתי · <b>0.75</b> משרה · מעיין מזרחי</div>
               </div>
               <div class="spoke">
                 <h4>תעסוקה ומיצוי זכויות</h4>
@@ -2005,11 +2023,20 @@
                 <h4>זקנה</h4>
                 <div class="sk"><b>4</b> עובדים · <b>2.7</b> משרות</div>
                 <p>רכזות זקנה, סומכות, שעות סיעוד וסביבה תומכת.</p>
+                <div class="comm">
+                  עבודה קהילתית · <b>0.5</b> משרה · שמואל (משותף עם מיצוי)
+                </div>
               </div>
               <div class="sepbox">
                 <h4>מוגבלות · צמ"יד</h4>
-                <div class="sk"><b>3</b> עובדים · <b>2.3</b> משרות</div>
-                <p>אלה · מרים · רומיה — מרכז משפחות, מעונות יום ומע"ש.</p>
+                <div class="sk"><b>4</b> עובדים · <b>3.0</b> משרות</div>
+                <p>
+                  אלה · מרים · רומיה · מיכל קופינסקי — מרכז משפחות, מעונות יום
+                  ומע"ש.
+                </p>
+                <div class="comm">
+                  עבודה קהילתית · <b>0.75</b> משרה · מיכל קופינסקי (מלוא המשרה)
+                </div>
               </div>
             </div>
           </div>
