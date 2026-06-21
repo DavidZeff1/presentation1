@@ -434,6 +434,13 @@
         text-align: right;
         line-height: 1.2;
       }
+      .bar-lbl small {
+        display: block;
+        font-weight: 500;
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-top: 2px;
+      }
       .bar-track {
         height: clamp(15px, 1.9vh, 22px);
         background: var(--paper-2);
@@ -575,6 +582,10 @@
         color: var(--clay);
         font-weight: 700;
       }
+      .dtable td.pct {
+        font-weight: 700;
+        color: var(--clay);
+      }
       .dtable tr.total td {
         font-weight: 800;
         color: var(--pine);
@@ -661,6 +672,22 @@
         font-weight: 700;
         font-size: clamp(18px, 2vw, 26px);
         margin-top: 3px;
+      }
+      .org-box ul {
+        list-style: none;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+      }
+      .org-box ul li {
+        font-size: 11.5px;
+        background: rgba(246, 241, 231, 0.12);
+        border: 1px solid rgba(246, 241, 231, 0.28);
+        padding: 4px 12px;
+        border-radius: 20px;
+        color: #f6f1e7;
       }
       .org-aux {
         display: flex;
@@ -1223,6 +1250,19 @@
         margin-top: 14px;
         line-height: 1.5;
       }
+      .note.emph {
+        font-size: 13.5px;
+        color: var(--ink);
+        font-weight: 600;
+        background: rgba(177, 78, 42, 0.09);
+        border-right: 5px solid var(--clay);
+        padding: 13px 16px;
+        box-shadow: var(--shadow);
+      }
+      .note.emph b {
+        color: var(--clay);
+        font-weight: 800;
+      }
 
       /* ===== REPORTING CHANNEL CARDS ===== */
       .chan-grid {
@@ -1628,7 +1668,7 @@
             <div><b>1,292</b><span>תיקים פעילים</span></div>
             <div><b>5,330</b><span>נפשות בטיפול</span></div>
             <div><b>₪45.7M</b><span>תקציב שנתי</span></div>
-            <div><b>43</b><span>אנשי צוות · 32.8 משרות</span></div>
+            <div><b>48</b><span>אנשי צוות · 36.36 משרות</span></div>
             <div><b>יוני 2026</b><span>מועד הדוח</span></div>
           </div>
         </div>
@@ -1651,7 +1691,7 @@
           </div>
           <p class="purpose-lead reveal d2">
             האגף הוא הגוף שמממש אחריות זו בפועל — בהנחיה, בפיקוח ובתקצוב של
-            <b>משרד הרווחה</b> — ומספק מענה לפרט, למשפחה ולקהילה:
+            <b>משרד הרווחה</b>
           </p>
           <div class="pillars reveal d3">
             <div class="pillar">
@@ -1736,11 +1776,18 @@
             <div class="org-box">
               <div class="role">מנהלת האגף</div>
               <div class="name">מתי בראון</div>
+              <ul>
+                <li>תעסוקה</li>
+                <li>מקום(6 אנשי צוות ללא עלות למועצה)</li>
+              </ul>
             </div>
             <div class="org-aux">
               <span>מזכירת האגף · <b>יעלה בויארסקי</b></span
               ><span>תחשיבנית · <b>רחל לוי</b></span
-              ><span>תחשיבן · <b>דוד זף</b></span>
+              ><span>תחשיבן · <b>דוד זף</b></span
+              ><span>מנהל מח׳ ישובים · <b>אבי אונגר</b></span
+              ><span>תוכנית לאומית · <b>יאיר גולדשמיט</b></span
+              ><span>רכזת מתנדבים · <b>יהודית זיכר</b></span>
             </div>
           </div>
           <div class="org-stem reveal d1"></div>
@@ -1749,7 +1796,7 @@
               <h3>צוות מערב</h3>
               <div class="head"><small>ראש צוות</small>רוני ברמץ</div>
               <div class="cnt">13<small> אנשי צוות</small></div>
-              <div class="fte-line"><b>9.2</b> משרות</div>
+              <div class="fte-line"><b>10.0</b> משרות</div>
               <ul>
                 <li>משפחות</li>
                 <li>זקנה</li>
@@ -1762,8 +1809,8 @@
             <div class="team reveal d3" style="--tc: var(--clay)">
               <h3>צוות מזרח</h3>
               <div class="head"><small>ראש צוות</small>ברוך רבי</div>
-              <div class="cnt">10<small> אנשי צוות</small></div>
-              <div class="fte-line"><b>7.8</b> משרות</div>
+              <div class="cnt">12<small> אנשי צוות</small></div>
+              <div class="fte-line"><b>8.6</b> משרות</div>
               <ul>
                 <li>משפחות</li>
                 <li>חוק נוער</li>
@@ -1777,7 +1824,7 @@
               <h3>מענים טיפוליים</h3>
               <div class="head"><small>ראש צוות</small>הדס לויתן</div>
               <div class="cnt">16<small> אנשי צוות</small></div>
-              <div class="fte-line"><b>11.2</b> משרות</div>
+              <div class="fte-line"><b>12.1</b> משרות</div>
               <ul>
                 <li>מניעת אלימות</li>
                 <li>התמכרויות</li>
@@ -1785,7 +1832,8 @@
                 <li>שכול ואובדן</li>
                 <li>טיפול זוגי</li>
                 <li>צעדים ראשונים</li>
-                <li>ית"ד / תעסוקה</li>
+                <li>עו"ס נוער</li>
+                <li>ית"ד</li>
               </ul>
             </div>
           </div>
@@ -1800,7 +1848,7 @@
         <div class="inner">
           <div class="slide-head">
             <div class="eyebrow reveal">הצוות המלא</div>
-            <h2 class="reveal d1">43 אנשי מקצוע (32.8 משרות) — שמית</h2>
+            <h2 class="reveal d1">48 אנשי מקצוע (36.36 משרות) — שמית</h2>
           </div>
           <div class="roster">
             <div class="rcol reveal d1" style="--tc: var(--pine)">
@@ -1811,23 +1859,26 @@
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>אלה גרשון</b> · <i>רכזת תחום צמ"יד</i></span
+                  <span
+                    ><b>אלה גרשון</b> · <i>מרכזת מוגבלויות (50%) · חינוך מיוחד (25%)</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>מרים</b> · <i>עו"ס צמ"יד</i></span
-                  ><span class="fte na">—</span>
+                  <span><b>מרים שילה</b> · <i>עו"ס</i></span
+                  ><span class="fte">83%</span>
                 </li>
                 <li>
-                  <span><b>מיטל וויל</b> · <i>עו"ס משפחות</i></span
+                  <span><b>מיטל ווייל</b> · <i>עו"ס משפחה</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>אלזה ביסמוט</b> · <i>עו"ס משפחה (בת עין)</i></span
+                  <span
+                    ><b>אלזה ביסמוט</b> · <i>עו"ס משפחה (50%) · קהילה (25%)</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>יסכה לנדאו</b> · <i>רכזת תחום זקנה</i></span
+                  <span
+                    ><b>יסכה לנדאו</b> · <i>מרכזת זקנה (50%) · קהילה (20%)</i></span
                   ><span class="fte">70%</span>
                 </li>
                 <li>
@@ -1835,49 +1886,51 @@
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>רעות וולף</b> · <i>עו"ס חוק ונוער</i></span
+                  <span><b>רעות וולף</b> · <i>עו"ס נוער בסיכון</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>נטע אסולין</b> · <i>רכזת יה"ב</i></span
+                  <span><b>נטע אסולין</b> · <i>עו"ס יה"ב</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>שירה זגדון</b> · <i>נושמים לרווחה</i></span
+                  <span><b>שירה זגדון</b> · <i>עו"ס נושמים</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>נירית דמרי</b> · <i>סומכת משפחות</i></span
+                  <span><b>נירית דמרי</b> · <i>סומכת משפחות וזקנה</i></span
                   ><span class="fte">50%</span>
                 </li>
                 <li>
-                  <span><b>עמיה לוי סיטון</b> · <i>סומכת זקנה</i></span
+                  <span><b>עמיה לוי</b> · <i>סומכת זקנה</i></span
                   ><span class="fte">50%</span>
                 </li>
                 <li>
-                  <span><b>יעל פרטוש</b> · <i>סומכת זקנה</i></span
+                  <span><b>יעל פרטוש</b> · <i>סמך ניצולי שואה</i></span
                   ><span class="fte">100%</span>
                 </li>
               </ul>
             </div>
             <div class="rcol reveal d2" style="--tc: var(--clay)">
-              <h4>צוות מזרח <span>10</span></h4>
+              <h4>צוות מזרח <span>12</span></h4>
               <ul>
                 <li class="lead">
                   <span><b>ברוך רבי</b> · <i>ראש צוות</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>אביטל לחזור</b> · <i>עו"ס משפחות</i></span
-                  ><span class="fte">75%</span>
-                </li>
-                <li>
-                  <span><b>רומיה סגיר</b> · <i>עו"ס משפחות וצמ"יד</i></span
+                  <span
+                    ><b>אביטל לחזור</b> · <i>עו"ס משפחה (62%) · חרבות ברזל (13%)</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
                   <span
-                    ><b>נויה גביר פנחס</b> · <i>עו"ס משפחות ומועדונית</i></span
+                    ><b>רומיה סגיר</b> · <i>עו"ס משפחה (50%) · מוגבלויות (25%)</i></span
+                  ><span class="fte">75%</span>
+                </li>
+                <li>
+                  <span
+                    ><b>נויה גביר פנחס</b> · <i>קהילה (30%) · מועדונית (25%) · משפחה (15%)</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
@@ -1885,7 +1938,8 @@
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>איילה חן</b> · <i>עו"ס לחוק נוער</i></span
+                  <span
+                    ><b>איילה חן</b> · <i>עו"ס משפחה/קליטה (50%) · נוער (25%)</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
@@ -1898,12 +1952,22 @@
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>שמואל המר</b> · <i>מיצוי זכויות</i></span
+                  <span
+                    ><b>שמואל המר</b> · <i>מיצוי זכויות · קהילתיות בזקנה</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>טליה</b> · <i>עו"ס זקנה</i></span
+                  <span><b>טליה בן נתן</b> · <i>עו"ס זקנה</i></span
                   ><span class="fte">50%</span>
+                </li>
+                <li>
+                  <span
+                    ><b>הדר וינקלר בך</b> · <i>עו"ס משפחה (75%) · חרבות ברזל (8%)</i></span
+                  ><span class="fte">83%</span>
+                </li>
+                <li>
+                  <span><b>קרולין שול שטנר</b> · <i>רכזת מיצוי זכויות</i></span
+                  ><span class="fte na">חל"ד</span>
                 </li>
               </ul>
             </div>
@@ -1915,15 +1979,12 @@
                   ><span class="fte">80%</span>
                 </li>
                 <li>
-                  <span><b>מור יפה</b> · <i>רכזת מניעת אלימות</i></span
-                  ><span class="fte">80%</span>
+                  <span><b>אור לוי</b> · <i>עו"ס אלמ"ב</i></span
+                  ><span class="fte">70%</span>
                 </li>
                 <li>
-                  <span><b>אור לוי</b> · <i>עו"ס מניעת אלימות</i></span
-                  ><span class="fte">50%</span>
-                </li>
-                <li>
-                  <span><b>יובל אזולאי</b> · <i>עו"ס מניעת אלימות</i></span
+                  <span
+                    ><b>יובל אזולאי</b> · <i>אלמ"ב גברים (50%) · צעדים (50%)</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
@@ -1931,19 +1992,24 @@
                   ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>דעאל מילון</b> · <i>רכז יחידת התמכרויות</i></span
+                  <span
+                    ><b>דעאל מילון</b> · <i>רכז התמכרויות (75%) · משפחה (25%)</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>חרות</b> · <i>התמכרויות</i></span
-                  ><span class="fte na">—</span>
+                  <span><b>רוני קליין</b> · <i>התמכרויות מבוגרים</i></span
+                  ><span class="fte">75%</span>
                 </li>
                 <li>
-                  <span><b>אילנה סילברמן</b> · <i>התמכרויות נוער</i></span
+                  <span><b>אילנה סילברמן</b> · <i>נוער והתמכרויות</i></span
                   ><span class="fte">50%</span>
                 </li>
                 <li>
-                  <span><b>מורן דהאן</b> · <i>רכזת פגיעות מיניות</i></span
+                  <span><b>חרות קארו</b> · <i>התמכרויות</i></span
+                  ><span class="fte na">סיום</span>
+                </li>
+                <li>
+                  <span><b>מורן דהן בדיחי</b> · <i>רכזת פגיעות מיניות</i></span
                   ><span class="fte">50%</span>
                 </li>
                 <li>
@@ -1952,11 +2018,11 @@
                 </li>
                 <li>
                   <span
-                    ><b>מיכל יסכה נביאן</b> · <i>פגיעות מיניות · שכול</i></span
+                    ><b>מיכל יסכה נביאן</b> · <i>פגיעות מיניות (50%) · מתאם חירום (50%)</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>ליאורה שקד</b> · <i>רכזת טיפול זוגי</i></span
+                  <span><b>ליאורה שקד</b> · <i>טיפול זוגי</i></span
                   ><span class="fte">75%</span>
                 </li>
                 <li>
@@ -1968,18 +2034,21 @@
                   ><span class="fte">80%</span>
                 </li>
                 <li>
-                  <span><b>רינת אלרואי גופברג</b> · <i>רכזת ית"ד</i></span
+                  <span><b>רינת גופרג אלרואי</b> · <i>רכזת ית"ד</i></span
                   ><span class="fte">100%</span>
                 </li>
                 <li>
-                  <span><b>רננה מגדר</b> · <i>ית"ד תעסוקה 18+</i></span
-                  ><span class="fte">50%</span>
+                  <span><b>רננה מגדר</b> · <i>ית"ד תעסוקת צעירים</i></span
+                  ><span class="fte">75%</span>
                 </li>
               </ul>
             </div>
           </div>
           <div class="note reveal d3" style="margin-top: 14px">
-            * בנוסף ל‑43, שלוש עובדות שאינן על תקן: בתיה, איילת ושבות.
+            חלק מהעובדים מחלקים את המשרה בין כמה תפקידים (האחוזים בסוגריים) ·
+            הנהלה ומטה (7): מתי בראון, יעלה בויארסקי, רחל לוי, דוד זף, אבי אונגר,
+            יאיר גולדשמיט, יהודית זיכר · חרות קארו סיימה (2/26) וקרולין שול שטנר
+            בחל"ד · בנוסף, שלוש עובדות שאינן על תקן: בתיה, איילת ושבות.
           </div>
           <div class="source reveal d3">
             מבנה צוות פרט ומשפחה — אגף הרווחה גוש עציון
@@ -1995,7 +2064,7 @@
             <h2 class="reveal d1">היקף הפעילות של האגף</h2>
             <p class="sub reveal d1">
               האגף מלווה היום למעלה מ‑5,300 תושבים ב‑1,292 תיקים פעילים, באמצעות
-              שלושה צוותים ו‑43 אנשי מקצוע (32.8 משרות).
+              שלושה צוותים ו‑48 אנשי מקצוע (36.36 משרות).
             </p>
           </div>
           <div class="bench reveal d1">
@@ -2027,9 +2096,19 @@
               <div class="desc">בתוך המשפחות בטיפול</div>
             </div>
             <div class="kpi sage reveal d3">
-              <div class="num">43</div>
+              <div class="num">270</div>
+              <div class="lbl">קשישים בטיפול</div>
+              <div class="desc">סוגיות זקנה מתועדות</div>
+            </div>
+            <div class="kpi clay reveal d3">
+              <div class="num">340</div>
+              <div class="lbl">אנשים עם מוגבלות</div>
+              <div class="desc">סוגיות מוגבלות וצמ"יד</div>
+            </div>
+            <div class="kpi sage reveal d3">
+              <div class="num">48</div>
               <div class="lbl">אנשי צוות</div>
-              <div class="desc">32.8 משרות · 3 צוותים + הנהלה</div>
+              <div class="desc">36.36 משרות · 3 צוותים + מטה והנהלה</div>
             </div>
             <div class="kpi reveal d3">
               <div class="num">₪45.7<small>M</small></div>
@@ -2130,14 +2209,14 @@
               </div>
               <div class="spoke">
                 <h4>מניעת אלימות</h4>
-                <div class="sk"><b>4</b> עובדים · <b>3.1</b> משרות</div>
+                <div class="sk"><b>3</b> עובדים · <b>2.0</b> משרות</div>
                 <p>מרכז למניעת אלימות</p>
                 <div class="comm">קהילתי · <b>0.75</b> משרה · מעיין מזרחי</div>
               </div>
               <div class="spoke">
                 <h4>תעסוקה ומיצוי זכויות</h4>
-                <div class="sk"><b>3</b> עובדים · <b>2.5</b> משרות</div>
-                <p>נושמים · יה"ב · מיצוי זכויות · מת"ר (אילת ושבות)</p>
+                <div class="sk"><b>3</b> עובדים · <b>2.0</b> משרות</div>
+                <p>נושמים · יה"ב · מיצוי זכויות (0.5 · שמואל) · מת"ר</p>
               </div>
               <div class="hub-c">
                 <h4>עו"ס משפחה</h4>
@@ -2147,7 +2226,7 @@
               <div class="spoke">
                 <h4>טיפול בהתמכרויות</h4>
                 <div class="sk"><b>3</b> עובדים · <b>2.0</b> משרות</div>
-                <p>דעאל · חרות · אילנה · מט"רא</p>
+                <p>דעאל (0.75) · רוני קליין · אילנה · מט"רא</p>
               </div>
               <div class="spoke">
                 <h4>צעירים בסיכון</h4>
@@ -2161,8 +2240,8 @@
               </div>
               <div class="spoke">
                 <h4>פגיעות מיניות ושכול</h4>
-                <div class="sk"><b>3</b> עובדים · <b>2.0</b> משרות</div>
-                <p>טיפול ותמיכה · שכול — הפניה לאל"ה וליש אור לטיפול</p>
+                <div class="sk"><b>3</b> עובדים · <b>1.5</b> משרות</div>
+                <p>טיפול ותמיכה (מיכל יסכה 0.5) · שכול — הפניה לאל"ה וליש אור</p>
               </div>
             </div>
             <div class="aside-sep reveal d3">
@@ -2174,9 +2253,7 @@
                   רכזות זקנה, סומכות, שעות סיעוד, מועדונים, מועדוניות וסביבה
                   תומכת.
                 </p>
-                <div class="comm">
-                  עבודה קהילתית · <b>0.5</b> משרה · שמואל (משותף עם מיצוי)
-                </div>
+                <div class="comm">עבודה קהילתית · <b>0.5</b> משרה · שמואל</div>
               </div>
               <div class="sepbox">
                 <h4>מוגבלות · צמ"יד</h4>
@@ -2186,7 +2263,7 @@
                   ומע"ש.
                 </p>
                 <div class="comm">
-                  עבודה קהילתית · <b>0.75</b> משרה · מיכל קופינסקי (מלוא המשרה)
+                  עבודה קהילתית · <b>0.75</b> משרה · מיכל קופינסקי
                 </div>
               </div>
             </div>
@@ -2321,8 +2398,8 @@
             <div class="eyebrow reveal">איפה — פריסה גאוגרפית</div>
             <h2 class="reveal d1">היכן מרוכז הטיפול</h2>
             <p class="sub reveal d1">
-              מספר הסוגיות הטיפוליות (נזקקויות) שתועדו בכל יישוב. סוגיה אינה תיק
-              — משק בית אחד עשוי לכלול כמה סוגיות.
+              מספר הסוגיות הטיפוליות (נזקקויות) שתועדו בכל יישוב. עשוי לכלול כמה
+              סוגיות.
             </p>
           </div>
           <div class="split">
@@ -2463,6 +2540,7 @@
                     <th class="c">אשכול</th>
                     <th class="c">תושבים</th>
                     <th class="c">מקבלי שירות</th>
+                    <th class="c">% מהתושבים</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2471,90 +2549,105 @@
                     <td class="c">6</td>
                     <td class="c">4,326</td>
                     <td class="c tot">769</td>
+                    <td class="c pct">17.8%</td>
                   </tr>
                   <tr>
                     <td class="nm">בת עין</td>
                     <td class="c">3</td>
                     <td class="c">1,730</td>
                     <td class="c tot">664</td>
+                    <td class="c pct">38.4%</td>
                   </tr>
                   <tr>
                     <td class="nm">נוקדים</td>
                     <td class="c">5</td>
                     <td class="c">3,093</td>
                     <td class="c tot">572</td>
+                    <td class="c pct">18.5%</td>
                   </tr>
                   <tr>
                     <td class="nm">אלון שבות</td>
                     <td class="c">7</td>
                     <td class="c">3,046</td>
                     <td class="c tot">475</td>
+                    <td class="c pct">15.6%</td>
                   </tr>
                   <tr>
                     <td class="nm">מעלה עמוס</td>
                     <td class="c">2</td>
                     <td class="c">906</td>
                     <td class="c tot">353</td>
+                    <td class="c pct">39.0%</td>
                   </tr>
                   <tr>
                     <td class="nm">אספר</td>
                     <td class="c">3</td>
                     <td class="c">1,228</td>
                     <td class="c tot">350</td>
+                    <td class="c pct">28.5%</td>
                   </tr>
                   <tr>
                     <td class="nm">אלעזר</td>
                     <td class="c">7</td>
                     <td class="c">2,615</td>
                     <td class="c tot">329</td>
+                    <td class="c pct">12.6%</td>
                   </tr>
                   <tr>
                     <td class="nm">נווה דניאל</td>
                     <td class="c">7</td>
                     <td class="c">2,355</td>
                     <td class="c tot">328</td>
+                    <td class="c pct">13.9%</td>
                   </tr>
                   <tr>
                     <td class="nm">כרמי צור</td>
                     <td class="c">5</td>
                     <td class="c">979</td>
                     <td class="c tot">169</td>
+                    <td class="c pct">17.3%</td>
                   </tr>
                   <tr>
                     <td class="nm">קדר</td>
                     <td class="c">7</td>
                     <td class="c">1,649</td>
                     <td class="c tot">141</td>
+                    <td class="c pct">8.6%</td>
                   </tr>
                   <tr>
                     <td class="nm">הר גילה</td>
                     <td class="c">7</td>
                     <td class="c">1,656</td>
                     <td class="c tot">116</td>
+                    <td class="c pct">7.0%</td>
                   </tr>
                   <tr>
                     <td class="nm">ראש צורים</td>
                     <td class="c">7</td>
                     <td class="c">978</td>
                     <td class="c tot">104</td>
+                    <td class="c pct">10.6%</td>
                   </tr>
                   <tr>
                     <td class="nm">כפר עציון</td>
                     <td class="c">4</td>
                     <td class="c">1,370</td>
                     <td class="c tot">79</td>
+                    <td class="c pct">5.8%</td>
                   </tr>
                   <tr>
                     <td class="nm">מגדל עוז</td>
                     <td class="c">3</td>
                     <td class="c">572</td>
                     <td class="c tot">58</td>
+                    <td class="c pct">10.1%</td>
                   </tr>
                   <tr class="total">
                     <td class="nm">סה"כ</td>
                     <td class="c">—</td>
                     <td class="c">26,503</td>
                     <td class="c tot">4,507</td>
+                    <td class="c pct">17.0%</td>
                   </tr>
                 </tbody>
               </table>
@@ -2776,13 +2869,6 @@
                 <b>מינהל המוגבלויות חריג</b> — 60% מההשמות מחוץ למועצה (הוסטלים,
                 מעונות יום ומע"ש), וכאן הפוטנציאל הגדול לפיתוח מסגרות מקומיות.
               </div>
-              <div class="statline" style="margin-top: 14px">
-                <div class="s">
-                  <b>2,469</b><span>מקבלי גמלאות ביטוח לאומי</span>
-                </div>
-                <div class="s"><b>1,387</b><span>אזרחים ותיקים</span></div>
-                <div class="s"><b>1,038</b><span>נכה / ילד נכה</span></div>
-              </div>
             </div>
           </div>
           <div class="source reveal d3">
@@ -2892,10 +2978,10 @@
               </div>
             </div>
           </div>
-          <div class="note reveal d3" style="border-right-color: var(--clay)">
-            שימו לב: דוחות התקצוב המתקבלים ממשרד הרווחה אינם תמיד משקפים את
-            התקציב המעודכן — ההקצבה עשויה לגדול במהלך השנה, ולכן ייתכן שהתקציב
-            בפועל גבוה מהמוצג כאן.
+          <div class="note emph reveal d3">
+            <b>שימו לב:</b> דוחות התקצוב המתקבלים ממשרד הרווחה אינם תמיד משקפים
+            את התקציב המעודכן — ההקצבה עשויה לגדול במהלך השנה, ולכן ייתכן
+            שהתקציב בפועל גבוה מהמוצג כאן.
           </div>
           <div class="source reveal d3">
             דוח הכנסות והוצאות אגף הרווחה (1–5.2026)
@@ -2910,27 +2996,28 @@
             <div class="eyebrow reveal">לאן הולך הכסף · הוצאה לפי פרק</div>
             <h2 class="reveal d1">ההוצאה לפי פרק תקציבי — עד מאי</h2>
             <p class="sub reveal d1">
-              תשעת פרקי התקציב (841–849). אורך הסרגל = התקציב השנתי לפרק; החלק
-              הכהה = הביצוע בפועל עד מאי.
+              פרקי התקציב (841–849), כשמש"ה (845) ושיקום (846) מוצגים יחד
+              כ"אנשים עם מוגבלות". אורך הסרגל = התקציב השנתי לפרק; החלק הכהה =
+              הביצוע בפועל עד מאי.
             </p>
           </div>
           <div class="split">
             <div class="barlist reveal d2">
               <div class="bar-row">
-                <div class="bar-lbl">845 · מש"ה (מוגבלות שכלית)</div>
+                <div class="bar-lbl">845 + 846 · אנשים עם מוגבלות</div>
                 <div class="bar-track budgettrack">
                   <div class="bar-budget" style="--b: 100%">
-                    <span class="bar-spent" style="--s: 42%"></span>
+                    <span class="bar-spent" style="--s: 41%"></span>
                   </div>
                 </div>
                 <div class="bar-val">
-                  ₪6.52M<small class="ann">מ‑₪15.63M</small>
+                  ₪8.69M<small class="ann">מ‑₪21.06M</small>
                 </div>
               </div>
               <div class="bar-row">
                 <div class="bar-lbl">843 · ילד ונוער</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 58%">
+                  <div class="bar-budget" style="--b: 43%">
                     <span class="bar-spent" style="--s: 42%"></span>
                   </div>
                 </div>
@@ -2941,7 +3028,7 @@
               <div class="bar-row">
                 <div class="bar-lbl">841 · מנהל רווחה (שכר והנהלה)</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 50%">
+                  <div class="bar-budget" style="--b: 37%">
                     <span class="bar-spent" style="--s: 23%"></span>
                   </div>
                 </div>
@@ -2950,20 +3037,9 @@
                 </div>
               </div>
               <div class="bar-row">
-                <div class="bar-lbl">846 · שיקום</div>
-                <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 35%">
-                    <span class="bar-spent" style="--s: 40%"></span>
-                  </div>
-                </div>
-                <div class="bar-val">
-                  ₪2.17M<small class="ann">מ‑₪5.43M</small>
-                </div>
-              </div>
-              <div class="bar-row">
                 <div class="bar-lbl">847 · תקון (התמכרויות, נוער בסיכון)</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 25%">
+                  <div class="bar-budget" style="--b: 18%">
                     <span class="bar-spent c-gold" style="--s: 26%"></span>
                   </div>
                 </div>
@@ -2974,7 +3050,7 @@
               <div class="bar-row">
                 <div class="bar-lbl">844 · אזרח ותיק (זקנה)</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 12%">
+                  <div class="bar-budget" style="--b: 9%">
                     <span class="bar-spent c-gold" style="--s: 21%"></span>
                   </div>
                 </div>
@@ -2985,7 +3061,7 @@
               <div class="bar-row">
                 <div class="bar-lbl">848 · קהילה</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 7%">
+                  <div class="bar-budget" style="--b: 5%">
                     <span class="bar-spent c-sage" style="--s: 19%"></span>
                   </div>
                 </div>
@@ -2996,7 +3072,7 @@
               <div class="bar-row">
                 <div class="bar-lbl">842 · פרט ומשפחה</div>
                 <div class="bar-track budgettrack">
-                  <div class="bar-budget" style="--b: 6%">
+                  <div class="bar-budget" style="--b: 5%">
                     <span class="bar-spent c-sage" style="--s: 32%"></span>
                   </div>
                 </div>
@@ -3016,7 +3092,7 @@
             </div>
             <div class="reveal d3">
               <div class="panel">
-                <h3>מוקד ההוצאה: מש"ה ומוגבלות</h3>
+                <h3>מוקד ההוצאה: אנשים עם מוגבלות</h3>
                 <p
                   style="
                     font-size: 14px;
@@ -3024,12 +3100,11 @@
                     line-height: 1.6;
                   "
                 >
-                  פרק ה<b style="color: var(--pine)">מש"ה (845)</b> לבדו מרכז
-                  כ‑<b style="color: var(--pine)">₪15.63M מתוך ₪45.7M</b> שנתי.
-                  יחד עם <b style="color: var(--pine)">ילד ונוער (843)</b> ו<b
-                    style="color: var(--pine)"
-                    >שיקום (846)</b
+                  פרק ה<b style="color: var(--pine)">אנשים עם מוגבלות</b> (מש"ה
+                  845 + שיקום 846) מרכז כ‑<b style="color: var(--pine)"
+                    >₪21.06M מתוך ₪45.7M</b
                   >
+                  שנתי. יחד עם <b style="color: var(--pine)">ילד ונוער (843)</b>
                   מדובר בכ‑66% מהתקציב — בעיקר רכש השמות במסגרות, מעונות יום
                   והסעות.
                 </p>
@@ -3059,57 +3134,38 @@
               הרשות.
             </p>
           </div>
-          <div class="chan-grid">
-            <div class="chan reveal d1" style="--c: var(--pine)">
-              <div class="chan-top">
-                <span class="chan-tag">מס"ר</span
-                ><span class="chan-pct">75%</span>
+          <div class="panel reveal d2">
+            <div class="barlist">
+              <div class="bar-row">
+                <div class="bar-lbl">השמות במסגרות<small>מס"ר</small></div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="--v: 75%"></div>
+                </div>
+                <div class="bar-val">₪13.2M<span class="pct">75%</span></div>
               </div>
-              <div class="chan-amt">כ‑₪13.2M</div>
-              <div class="chan-name">השמות במסגרות</div>
-              <div class="chan-desc">
-                השמה במוסדות ומעונות — אוטיזם, מש"ה, פנימיות ומעונות יום. מרבית
-                התקציב.
+              <div class="bar-row">
+                <div class="bar-lbl">שכר וכוח אדם<small>כ"ח ברשויות</small></div>
+                <div class="bar-track">
+                  <div class="bar-fill c-sage" style="--v: 17%"></div>
+                </div>
+                <div class="bar-val">₪2.9M<span class="pct">17%</span></div>
               </div>
-              <div class="chan-bar"><span style="--w: 100%"></span></div>
-            </div>
-            <div class="chan reveal d2" style="--c: var(--sage)">
-              <div class="chan-top">
-                <span class="chan-tag">כ"ח ברשויות</span
-                ><span class="chan-pct">17%</span>
+              <div class="bar-row">
+                <div class="bar-lbl">סיוע ישיר לתושבים<small>מת"ס</small></div>
+                <div class="bar-track">
+                  <div class="bar-fill c-clay" style="--v: 5%"></div>
+                </div>
+                <div class="bar-val">₪0.9M<span class="pct">5%</span></div>
               </div>
-              <div class="chan-amt">כ‑₪2.9M</div>
-              <div class="chan-name">שכר וכוח אדם</div>
-              <div class="chan-desc">
-                שכר עובדי המחלקה, "נושמים לרווחה" וכוח אדם לחינוך מיוחד.
+              <div class="bar-row">
+                <div class="bar-lbl">
+                  שירותים בהפעלת המועצה<small>דיווח רשות</small>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill c-gold" style="--v: 1.5%"></div>
+                </div>
+                <div class="bar-val">₪0.3M<span class="pct">1.5%</span></div>
               </div>
-              <div class="chan-bar"><span style="--w: 23%"></span></div>
-            </div>
-            <div class="chan reveal d3" style="--c: var(--clay)">
-              <div class="chan-top">
-                <span class="chan-tag">מת"ס</span
-                ><span class="chan-pct">5%</span>
-              </div>
-              <div class="chan-amt">כ‑₪0.9M</div>
-              <div class="chan-name">סיוע ישיר לתושבים</div>
-              <div class="chan-desc">
-                תשלומים ישירים ל‑140 מקבלים — נסיעות, ית"ד סל גמיש וסיוע
-                למשפחות.
-              </div>
-              <div class="chan-bar"><span style="--w: 7%"></span></div>
-            </div>
-            <div class="chan reveal d4" style="--c: var(--gold)">
-              <div class="chan-top">
-                <span class="chan-tag">דיווח רשות</span
-                ><span class="chan-pct">1.5%</span>
-              </div>
-              <div class="chan-amt">כ‑₪0.3M</div>
-              <div class="chan-name">שירותים בהפעלת המועצה</div>
-              <div class="chan-desc">
-                שירותים שהמועצה מפעילה ומדווחת — הסעות וליווי למרכזי יום
-                שיקומיים, הזדקנות בקהילה.
-              </div>
-              <div class="chan-bar"><span style="--w: 2%"></span></div>
             </div>
           </div>
           <div class="note reveal d4" style="margin-top: 14px">
@@ -3174,7 +3230,7 @@
                 <h3>עומס תיקים — עו"ס מובילות</h3>
                 <div class="barlist">
                   <div class="bar-row">
-                    <div class="bar-lbl">מיטל וויל</div>
+                    <div class="bar-lbl">מיטל ווייל</div>
                     <div class="bar-track">
                       <div class="bar-fill" style="--v: 100%"></div>
                     </div>
@@ -3225,9 +3281,9 @@
           <h2 class="reveal d1">אגף מקצועי, פרוס ומבוסס‑נתונים</h2>
           <div class="sum">
             <div class="c reveal d1">
-              <b>43</b
+              <b>48</b
               ><span
-                >אנשי מקצוע (32.8 משרות) ב‑3 צוותים, המכסים את כל תחומי
+                >אנשי מקצוע (36.36 משרות) ב‑3 צוותים, המכסים את כל תחומי
                 הרווחה</span
               >
             </div>
